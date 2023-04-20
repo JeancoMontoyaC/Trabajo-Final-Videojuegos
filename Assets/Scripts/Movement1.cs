@@ -14,6 +14,7 @@ private bool floor = false;
 void Start()
 {
     rb = GetComponent<Rigidbody2D>();
+    rb.constraints=RigidbodyConstraints2D.FreezeRotation;
 }
 
 void Update()

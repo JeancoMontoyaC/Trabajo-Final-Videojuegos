@@ -336,9 +336,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2e27b24b8cfb4a478d88e451977a1de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 10
-  slideForce: 0.1
-  jumpForce: 500
+  maxSpeed: 15
+  slideForce: 0.05
+  jumpForce: 400
 --- !u!1 &451326073
 GameObject:
   m_ObjectHideFlags: 0
@@ -793,9 +793,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c66bde1096e70b94190c9a288b22e6f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 10
-  slideForce: 0.1
-  jumpForce: 500
+  maxSpeed: 15
+  slideForce: 0.05
+  jumpForce: 400
 --- !u!1 &632161466
 GameObject:
   m_ObjectHideFlags: 0

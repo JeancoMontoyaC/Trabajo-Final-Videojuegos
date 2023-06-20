@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Movement2 : MonoBehaviour
 {
-public float maxSpeed = 10f;
-public float slideForce = 0.1f;
-public float jumpForce = 500f;
+public float maxSpeed = 15f;
+public float slideForce = 0.05f;
+public float jumpForce = 400f;
 
 private Rigidbody2D rb;
 private bool floor = false;
@@ -42,7 +42,7 @@ void FixedUpdate()
 
 void OnCollisionEnter2D(Collision2D collision)
 {
-    if (collision.gameObject.tag == "Floor")
+    if (collision.gameObject.layer == 30)
     {
         floor = true;
     }
@@ -50,7 +50,7 @@ void OnCollisionEnter2D(Collision2D collision)
 
 void OnCollisionExit2D(Collision2D collision)
 {
-    if (collision.gameObject.tag == "Floor")
+    if (collision.gameObject.layer == 30)
     {
         floor = false;
     }

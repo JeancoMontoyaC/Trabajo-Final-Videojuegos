@@ -4,11 +4,18 @@ using UnityEngine.SceneManagement;
 
 public class GlobalGameManager : MonoBehaviour
 {
-    public static GlobalGameManager gameInstance;
     
-    public void resetLevel()
+
+    public void RetryLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        print("Recargando la escena");
+        Debug.Log("Reitentando");
+        SceneManager.LoadScene("Level-1");
+        // SceneManager.GetActiveScene().buildIndex
+    }
+    
+    public void QuitApp()
+    {
+        Debug.Log("Saliendo del juego");
+        Application.Quit();
     }
 }

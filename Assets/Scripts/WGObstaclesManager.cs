@@ -11,13 +11,12 @@ public class WGObstaclesManager : MonoBehaviour
         {
             isDead = true;
             Destroy(gameObject);
-            resetLevel();
+            showDeathMenu();
         }
     }
     
-    public void resetLevel()
+    public void showDeathMenu()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        print("Recargando la escena");
+        SceneManager.LoadScene("Death-menu", LoadSceneMode.Additive);
     }
 }

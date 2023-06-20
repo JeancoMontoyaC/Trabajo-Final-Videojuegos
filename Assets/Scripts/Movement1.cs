@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Movement1 : MonoBehaviour
 {
-public float maxSpeed = 10f;
-public float slideForce = 0.1f;
-public float jumpForce = 500f;
+public float maxSpeed = 15f;
+public float slideForce = 0.05f;
+public float jumpForce = 400f;
 
 private Rigidbody2D rb;
 private bool floor = false;

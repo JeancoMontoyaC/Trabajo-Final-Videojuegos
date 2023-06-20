@@ -15,7 +15,7 @@ public class FBCollectibleInteraction : MonoBehaviour
             {
                 isCollected = true;
                 Destroy(gameObject);
-                GameManager1.instance.collectingRedCollectible();
+                GameManager1.instance.collectingRedDiamonds();
             }
         }
     }

@@ -9,8 +9,8 @@ public class GameManager2 : MonoBehaviour
 {
 
     public static GameManager2 instance;
-    private int blueCollectiblesCollected;
-    private int redCollectiblesCollected;
+    private int blueDiamondsCollected;
+    private int redDiamondsCollected;
     [SerializeField]
     private GameObject blueCollectiblePrefab;
     [SerializeField]
@@ -58,21 +58,22 @@ public class GameManager2 : MonoBehaviour
     
     void Update()
     {
-        if(Door1Collision.valor==1 &&  Door2Collision.valor==1){
+        if(Door1Collision.valor==1 &&  Door2Collision.valor==1)
+        {
             Door1Collision.valor=0;
             Door2Collision.valor=0;
             SceneManager.LoadScene("Level-1");
-         }
+        }
     }
     
-    public void collectingBlueCollectible ()
+    public void collectingBlueDiamonds ()
     {
-        blueCollectiblesCollected += 1;
+        blueDiamondsCollected += 1;
     }
 
-    public void collectingRedCollectible()
+    public void collectingRedDiamonds()
     {
-        redCollectiblesCollected += 1;
+        redDiamondsCollected += 1;
     }
 }
 

@@ -17,11 +17,11 @@ public class WGCollectibleInteraction : MonoBehaviour
                 String activeScene = SceneManager.GetActiveScene().name;
                 if (activeScene.Equals("Level-1"))
                 {
-                    GameManager1.instance.collectingBlueCollectible();
+                    GameManager1.instance.collectingBlueDiamonds();
                 }
                 else if (activeScene.Equals("Level-2"))
                 {
-                    GameManager2.instance.collectingBlueCollectible();
+                    GameManager2.instance.collectingBlueDiamonds();
                 }
                 else
                 {

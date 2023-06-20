@@ -8,14 +8,14 @@ using UnityEngine.SceneManagement;
 public class GameManager1 : MonoBehaviour
 {
     public static GameManager1 instance;
-    private int blueCollectiblesCollected = 0;
-    private int redCollectiblesCollected = 0;
+    private int blueDiamondsCollected;
+    private int redDiamondsCollected;
     [SerializeField]
     private GameObject blueCollectiblePrefab;
     [SerializeField]
     private GameObject redCollectiblePrefab;
+    private float timer;  
 
-    
     private void Awake()
     {
         if (instance == null)
@@ -57,31 +57,37 @@ public class GameManager1 : MonoBehaviour
     }
 
 
-    void Update()
+    private void Update()
     {
-
+        timer += Time.deltaTime;
         if(Door1Collision.valor==1 &&  Door2Collision.valor==1)
         {
             Door1Collision.valor=0;
             Door2Collision.valor=0;
             SceneManager.LoadScene("Level-2");
+            print("Diamantes azules");
+            print(blueDiamondsCollected);
+            print("Diamantes rojos");
+            print(redDiamondsCollected);
+            print("Tiempo empleado");
+            print(timer/60);
+            print("total muertes");
+            int deaths = PlayerPrefs.GetInt("Deaths");
+            print(deaths);
+
         }
     }
 
-    public void collectingBlueCollectible ()
+    public void collectingBlueDiamonds ()
     {
-        blueCollectiblesCollected += 1;
+        blueDiamondsCollected += 1;
     }
 
-    public void collectingRedCollectible()
+    public void collectingRedDiamonds()
     {
-        redCollectiblesCollected += 1;
+        redDiamondsCollected += 1;
     }
-
-    public int getBlueCollectiblesCollected()
-    {
-        return blueCollectiblesCollected;
-    }
+    
 }
 
 [System.Serializable]

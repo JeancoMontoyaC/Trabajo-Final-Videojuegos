@@ -12,10 +12,9 @@ public class WGObstaclesManager : MonoBehaviour
         if (col.CompareTag("Fire"))
         {
             currentLevel = SceneManager.GetActiveScene().name;
-            Destroy(gameObject);
             GlobalGameManager.lastLevel = currentLevel;
-            print(currentLevel);
             GlobalGameManager.Instance.showDeathMenu();
+            Destroy(gameObject);
             isDead = true;
         }
     }

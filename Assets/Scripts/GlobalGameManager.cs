@@ -7,6 +7,11 @@ public class GlobalGameManager : MonoBehaviour
 {
     private static GlobalGameManager _instance;
     public static string lastLevel;
+    private int totalDeaths;
+    // public static int blueDiamondsCollected;
+    // public static int redDiamondsCollected;
+    // public static float minutesToPassLevel;
+    
     public static GlobalGameManager Instance
     {
         get
@@ -29,7 +34,8 @@ public class GlobalGameManager : MonoBehaviour
     public void RetryLevel()
     {
         SceneManager.LoadScene(lastLevel);
-        // SceneManager.GetActiveScene().buildIndex
+        totalDeaths += 1;
+        PlayerPrefs.SetInt("Deaths", totalDeaths);
     }
     
     public void QuitApp()

@@ -18,9 +18,8 @@ public class FBObstaclesManager : MonoBehaviour
     public void resetLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        print("Recargando la escena");
-        int blueCollected = GameManager1.instance.getBlueCollectiblesCollected();
-        print(blueCollected);
+        
+      
     }
 
 }

@@ -2,12 +2,11 @@ using UnityEngine;
 using TMPro;
 
 public class Timer : MonoBehaviour {
+    
     [SerializeField]
-    private float timerDuration = 3f * 60f; 
-
+    private float timerDuration = 3f * 60f;
     [SerializeField]
     private bool countDown = true;
-
     private float timer;
     [SerializeField]
     private TextMeshProUGUI firstMinute;
@@ -108,5 +107,10 @@ public class Timer : MonoBehaviour {
         firstSecond.enabled = enabled;
         secondSecond.enabled = enabled;
 
+    }
+
+    public float getTimeInSec()
+    {
+        return timer;
     }
 }

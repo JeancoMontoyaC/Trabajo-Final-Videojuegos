@@ -1,22 +1,23 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class WGObstaclesManager : MonoBehaviour
 {
     private bool isDead;
-
+    private string currentLevel;
+    
     public void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("Fire"))
         {
-            isDead = true;
+            currentLevel = SceneManager.GetActiveScene().name;
             Destroy(gameObject);
-            showDeathMenu();
+            GlobalGameManager.lastLevel = currentLevel;
+            print(currentLevel);
+            GlobalGameManager.Instance.showDeathMenu();
+            isDead = true;
         }
     }
     
-    public void showDeathMenu()
-    {
-        SceneManager.LoadScene("Death-menu", LoadSceneMode.Additive);
-    }
 }

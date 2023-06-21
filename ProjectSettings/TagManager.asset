@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Floor
+  - FireBoy
+  - WaterGirl
+  - Fire
+  - Water
+  - Toxic
   layers:
   - Default
   - TransparentFX

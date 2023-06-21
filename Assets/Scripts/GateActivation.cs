@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public class GateActivation : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class GateActivation : MonoBehaviour
     
     private bool isActive;
 
-    private bool bothPressingButton;
+    private int howManyPressingButton;
 
     private float moveDuration = 10f;
 
@@ -29,31 +30,49 @@ public class GateActivation : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D col)
     {
-        
-        if (!isActive && (col.CompareTag("FireBoy") || col.CompareTag("WaterGirl")))
+        if ((col.CompareTag("FireBoy") || col.CompareTag("WaterGirl")))
         {
-            moveUpGate();
+            string buttonType = gameObject.tag;
+            
+            if (buttonType.Equals("ButtonRight"))
+            {
+                Gate.buttonRightPressed = true;
+            }
+            else
+            {
+                Gate.buttonLeftPressed = true;
+            }
+            
+            if(!Gate.gateIsActive){moveUpGate();}
+            Gate.gateIsActive = true;
             pressButtonEffect();
-            isActive = true;
+            howManyPressingButton += 1;
+            
         }
     }
-
-    public void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.CompareTag("FireBoy") && other.CompareTag("WaterGirl"))
-        {
-            bothPressingButton = true;
-        }
-    }
+    
 
     public void OnTriggerExit2D(Collider2D other)
     {
-        if (isActive)
+        string buttonType = gameObject.tag;
+        howManyPressingButton -= 1;
+        if (buttonType.Equals("ButtonRight"))
+        {
+            Gate.buttonRightPressed = false;
+        }
+        else
+        {
+            Gate.buttonLeftPressed = false;
+        }
+        
+        if (howManyPressingButton < 1 && !(Gate.buttonRightPressed) && !(Gate.buttonLeftPressed))
         {
             moveDownGate();
-            comeBackButtonEffect();
-            isActive = false;
+            Gate.buttonRightPressed = false;
+            Gate.buttonLeftPressed = false;
+            Gate.gateIsActive = false;
         }
+        comeBackButtonEffect();
     }
 
     public void moveUpGate()

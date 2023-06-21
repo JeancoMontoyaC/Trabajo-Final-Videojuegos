@@ -9,7 +9,7 @@ public class Door2Collision : MonoBehaviour
     public static int valor=0;
 
     void Update(){
-        Debug.Log(valor);
+        
     }
     void OnTriggerEnter2D(){
         valor=1;

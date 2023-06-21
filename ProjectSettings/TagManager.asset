@@ -10,6 +10,8 @@ TagManager:
   - Fire
   - Water
   - Toxic
+  - ButtonRight
+  - ButtonLeft
   layers:
   - Default
   - TransparentFX

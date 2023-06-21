@@ -7,10 +7,6 @@ public class GlobalGameManager : MonoBehaviour
 {
     private static GlobalGameManager _instance;
     public static string lastLevel;
-    // public static int blueDiamondsCollected;
-    // public static int redDiamondsCollected;
-    // public static float minutesToPassLevel;
-    
     public static GlobalGameManager Instance
     {
         get

@@ -24,11 +24,46 @@ public class LevelUpMenu : MonoBehaviour
         int redDiamondsNum = PlayerPrefs.GetInt(redDiamondsKey);
         float levelTimeNum = PlayerPrefs.GetFloat(levelTimeKey);
         int deathsNum = PlayerPrefs.GetInt(deathsKey);
-
-        time.text = "Time: " + levelTimeNum;
+        string ranking = calculateRanking(blueDiamondsNum, redDiamondsNum, levelTimeNum, deathsNum);
+        time.text = "Time: " + levelTimeNum + " min.";
         blueDiamonds.text = "Blue Diamonds: " + blueDiamondsNum; 
         redDiamonds.text = "Red Diamonds: " + redDiamondsNum;
-        deaths.text = "Deaths: " + deathsNum;
-        
+        deaths.text = "Ranking: " + ranking;
+
     }
+
+    private String calculateRanking(int numBlueDiamonds, int numRedDiamonds, float timeUsed, int numDeaths)
+    {
+        int diamondScore = numBlueDiamonds * 10 + numRedDiamonds * 10;
+        float timeScore = 100 - (timeUsed * 20);
+        float deathsScore = 100 - numDeaths * 20;
+        float totalScore = diamondScore + timeScore + deathsScore;
+        
+        switch (totalScore)
+        {
+            case >= 280:
+                return Ranking.A1.ToString();
+            case  >= 250:
+                return Ranking.A2.ToString();
+            case  >= 200:
+                return Ranking.B1.ToString();
+            case  >= 150:
+                return Ranking.B2.ToString();
+            case  >= 100:
+                return Ranking.C1.ToString();
+            default:
+                return Ranking.C2.ToString();
+        }
+
+    }
+}
+
+public enum Ranking
+{
+    C2 ,
+    C1,
+    B2,
+    B1,
+    A2,
+    A1
 }

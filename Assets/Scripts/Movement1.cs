@@ -42,7 +42,7 @@ void FixedUpdate()
 
 void OnCollisionEnter2D(Collision2D collision)
 {
-    if (collision.gameObject.tag == "Floor")
+    if (collision.gameObject.layer == 30)
     {
         floor = true;
     }
@@ -50,7 +50,7 @@ void OnCollisionEnter2D(Collision2D collision)
 
 void OnCollisionExit2D(Collision2D collision)
 {
-    if (collision.gameObject.tag == "Floor")
+    if (collision.gameObject.layer == 30)
     {
         floor = false;
     }

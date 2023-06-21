@@ -549,10 +549,10 @@ TextureImporter:
       name: tiles_packed_21
       rect:
         serializedVersion: 2
-        x: 18
+        x: 20
         y: 126
-        width: 18
-        height: 18
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -573,7 +573,7 @@ TextureImporter:
         x: 36
         y: 126
         width: 18
-        height: 18
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -593,8 +593,8 @@ TextureImporter:
         serializedVersion: 2
         x: 54
         y: 126
-        width: 18
-        height: 18
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -807,7 +807,7 @@ TextureImporter:
         height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 0, z: 0, w: 10}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1227,7 +1227,7 @@ TextureImporter:
         height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 0, z: 0, w: 11}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -3941,8 +3941,8 @@ TextureImporter:
       tiles_packed_109: 1908596267
       tiles_packed_72: 1597772581
       tiles_packed_126: 140920146
-      tiles_packed_115: -1794521642
       tiles_packed_25: -1449948463
+      tiles_packed_115: -1794521642
       tiles_packed_42: 772733556
       tiles_packed_168: -775297692
       tiles_packed_97: 1384670558
@@ -3983,8 +3983,8 @@ TextureImporter:
       tiles_packed_122: -1175625907
       tiles_packed_29: 1626711809
       tiles_packed_127: 1794050595
-      tiles_packed_40: 229676715
       tools: 742444524
+      tiles_packed_40: 229676715
       tiles_packed_163: -1194559208
       tiles_packed_48: 274568215
       tiles_packed_101: -414714926

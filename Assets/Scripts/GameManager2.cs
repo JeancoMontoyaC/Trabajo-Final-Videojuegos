@@ -62,7 +62,7 @@ public class GameManager2 : MonoBehaviour
         {
             Door1Collision.valor=0;
             Door2Collision.valor=0;
-            SceneManager.LoadScene("Level-1");
+            SceneManager.LoadScene("Level-3");
         }
     }
     

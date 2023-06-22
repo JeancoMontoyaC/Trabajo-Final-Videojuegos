@@ -7,11 +7,6 @@ public class GlobalGameManager : MonoBehaviour
 {
     private static GlobalGameManager _instance;
     public static string lastLevel;
-    private int totalDeaths;
-    // public static int blueDiamondsCollected;
-    // public static int redDiamondsCollected;
-    // public static float minutesToPassLevel;
-    
     public static GlobalGameManager Instance
     {
         get
@@ -34,8 +29,6 @@ public class GlobalGameManager : MonoBehaviour
     public void RetryLevel()
     {
         SceneManager.LoadScene(lastLevel);
-        totalDeaths += 1;
-        PlayerPrefs.SetInt("Deaths", totalDeaths);
     }
     
     public void QuitApp()
@@ -46,6 +39,20 @@ public class GlobalGameManager : MonoBehaviour
     
     public void showDeathMenu()
     {
-        SceneManager.LoadScene("Death-menu", LoadSceneMode.Additive);
+        SceneManager.LoadScene("Death-menu", LoadSceneMode.Single);
+    }
+
+    public void showLevelUpMenu()
+    {
+        SceneManager.LoadScene("Level-up-menu", LoadSceneMode.Single);
+    }
+
+    public void goToNextLevel()
+    {
+        string[] parts = lastLevel.Split("-");
+        int nexLevelNumb = Int32.Parse(parts[1]) + 1;
+        string nextLevel = $"Level-{nexLevelNumb}";
+        SceneManager.LoadScene(nextLevel);
+        PlayerPrefs.DeleteAll();
     }
 }

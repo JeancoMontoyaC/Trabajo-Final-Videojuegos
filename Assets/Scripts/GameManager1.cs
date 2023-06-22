@@ -29,7 +29,16 @@ public class GameManager1 : MonoBehaviour
     }
 
     private void Start()
-    {
+    {   
+        // Clean all the keys storaged 
+        // PlayerPrefs.DeleteAll();
+        
+        // Set to global manager which is the current level
+        string currentLevel = SceneManager.GetActiveScene().name;
+        GlobalGameManager.lastLevel = currentLevel;
+        print(GlobalGameManager.lastLevel);
+        
+        // Display the collectibles from a json file
         string jsonPathBlue = "Assets/Files/collectibles-lvl1-blue.json";
         string jsonBlue = File.ReadAllText(jsonPathBlue);
         
@@ -60,33 +69,25 @@ public class GameManager1 : MonoBehaviour
     private void Update()
     {
         timer += Time.deltaTime;
+        // When the players pass the level 1
         if(Door1Collision.valor==1 &&  Door2Collision.valor==1)
         {
             Door1Collision.valor=0;
             Door2Collision.valor=0;
-            SceneManager.LoadScene("Level-2");
-            print("Diamantes azules");
-            print(blueDiamondsCollected);
-            print("Diamantes rojos");
-            print(redDiamondsCollected);
-            print("Tiempo empleado");
-            print(timer/60);
-            print("total muertes");
-            int deaths = PlayerPrefs.GetInt("Deaths");
-            print(deaths);
-
+            // Set the level info to show later
+            float timeToPassLvl = timer / 60;
+            // SceneManager.LoadScene("Level-2");
+            PlayerPrefs.SetInt("Level-1-blue-diamonds", blueDiamondsCollected);
+            PlayerPrefs.SetInt("Level-1-red-diamonds", redDiamondsCollected);
+            PlayerPrefs.SetFloat("Level-1-time", timeToPassLvl);
+            GlobalGameManager.Instance.showLevelUpMenu();
         }
     }
 
-    public void collectingBlueDiamonds ()
-    {
-        blueDiamondsCollected += 1;
-    }
-
-    public void collectingRedDiamonds()
-    {
-        redDiamondsCollected += 1;
-    }
+    public void collectingBlueDiamonds () => blueDiamondsCollected += 1;
+    
+    public void collectingRedDiamonds() => redDiamondsCollected += 1;
+    
     
 }
 

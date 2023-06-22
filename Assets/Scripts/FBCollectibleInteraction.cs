@@ -1,7 +1,6 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FBCollectibleInteraction : MonoBehaviour
 {
@@ -15,7 +14,19 @@ public class FBCollectibleInteraction : MonoBehaviour
             {
                 isCollected = true;
                 Destroy(gameObject);
-                GameManager1.instance.collectingRedDiamonds();
+                String activeScene = SceneManager.GetActiveScene().name;
+                if (activeScene.Equals("Level-1"))
+                {
+                    GameManager1.instance.collectingRedDiamonds();
+                }
+                else if (activeScene.Equals("Level-2"))
+                {
+                    GameManager2.instance.collectingRedDiamonds();
+                }
+                else
+                {
+                    
+                }
             }
         }
     }

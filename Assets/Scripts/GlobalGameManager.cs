@@ -55,4 +55,10 @@ public class GlobalGameManager : MonoBehaviour
         SceneManager.LoadScene(nextLevel);
         PlayerPrefs.DeleteAll();
     }
+
+    public void resetGame()
+    {
+        SceneManager.LoadScene("Level-1");
+        PlayerPrefs.DeleteAll();
+    }
 }

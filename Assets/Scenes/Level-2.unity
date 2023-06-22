@@ -2007,10 +2007,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 206249273}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36a68df6e0642944199a318627fa2629, type: 3}
+  m_Script: {fileID: 11500000, guid: 64a8b2781a1b96440b9a6c885a136d41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: {fileID: 2929947246389408171, guid: f0f0d1e43369a794c8e8c41921cf0aac, type: 3}
+  sound1: {fileID: 2929947246389408171, guid: f0f0d1e43369a794c8e8c41921cf0aac, type: 3}
+  sound2: {fileID: 6492943984186262218, guid: 63efba2ffea499046bff938f44219a78, type: 3}
 --- !u!1 &271919853
 GameObject:
   m_ObjectHideFlags: 0

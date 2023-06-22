@@ -8,6 +8,8 @@ public float maxSpeed = 15f;
 public float slideForce = 0.05f;
 public float jumpForce = 400f;
 
+public GameObject sound;
+
 private Rigidbody2D rb;
 private bool floor = false;
 
@@ -23,6 +25,7 @@ void Update()
     {
         rb.AddForce(new Vector2(0f, jumpForce));
         floor = false;
+	Instantiate(sound);
     }
 }
 
@@ -37,6 +40,7 @@ void FixedUpdate()
     if (Mathf.Abs(rb.velocity.x) < maxSpeed)
     {
         rb.AddForce(new Vector2(moveInput * 20f, 0f));
+	
     }
 }
 

@@ -568,6 +568,7 @@ MonoBehaviour:
   maxSpeed: 15
   slideForce: 0.05
   jumpForce: 400
+  sound: {fileID: 6819887014438549437, guid: fe6c1c0cba2bd5041ab8a91b43ebb52f, type: 3}
 --- !u!70 &258629483
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1665,6 +1666,7 @@ MonoBehaviour:
   maxSpeed: 15
   slideForce: 0.05
   jumpForce: 400
+  sound: {fileID: 6819887014438549437, guid: fe6c1c0cba2bd5041ab8a91b43ebb52f, type: 3}
 --- !u!70 &603231766
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1705,7 +1707,7 @@ GameObject:
   - component: {fileID: 632161469}
   - component: {fileID: 632161468}
   - component: {fileID: 632161470}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Fireboy paths
   m_TagString: Floor
   m_Icon: {fileID: 0}

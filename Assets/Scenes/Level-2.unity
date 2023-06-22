@@ -2063,6 +2063,7 @@ MonoBehaviour:
   maxSpeed: 10
   slideForce: 0.1
   jumpForce: 500
+  sound: {fileID: 6819887014438549437, guid: fe6c1c0cba2bd5041ab8a91b43ebb52f, type: 3}
 --- !u!50 &271919856
 Rigidbody2D:
   serializedVersion: 4
@@ -2936,6 +2937,7 @@ MonoBehaviour:
   maxSpeed: 10
   slideForce: 0.1
   jumpForce: 500
+  sound: {fileID: 6819887014438549437, guid: fe6c1c0cba2bd5041ab8a91b43ebb52f, type: 3}
 --- !u!50 &792521488
 Rigidbody2D:
   serializedVersion: 4

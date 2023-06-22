@@ -195,7 +195,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1568309383
-  m_SortingLayer: -1
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -14305,6 +14305,7 @@ MonoBehaviour:
   maxSpeed: 10
   slideForce: 0.1
   jumpForce: 500
+  sound: {fileID: 6819887014438549437, guid: fe6c1c0cba2bd5041ab8a91b43ebb52f, type: 3}
 --- !u!50 &271919856
 Rigidbody2D:
   serializedVersion: 4
@@ -15044,6 +15045,7 @@ MonoBehaviour:
   maxSpeed: 10
   slideForce: 0.1
   jumpForce: 500
+  sound: {fileID: 6819887014438549437, guid: fe6c1c0cba2bd5041ab8a91b43ebb52f, type: 3}
 --- !u!50 &792521488
 Rigidbody2D:
   serializedVersion: 4

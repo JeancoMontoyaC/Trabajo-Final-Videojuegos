@@ -20,9 +20,11 @@ public class GameManager3 : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer > 5)
+        if (timer > 2)
         {
-            enemyClone = Instantiate(enemy, new Vector3(0, 0, 0), transform.rotation) as GameObject;
+            enemyClone = Instantiate(enemy, new Vector3(Random.Range(-15.0f,15.0f), 8.0f, 0.0f), transform.rotation) as GameObject;
+            Destroy(enemyClone, 5);
+            timer = 0;
         }
     }
 }

@@ -38,6 +38,9 @@ public class MusicLevel1 : MonoBehaviour
             Destroy(o);
             o=Instantiate(sound2);
         }
+	if (Input.GetKey(KeyCode.M)){
+	   Destroy(o);
+	}
     }
 
    

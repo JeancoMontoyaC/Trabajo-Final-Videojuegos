@@ -2010,8 +2010,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64a8b2781a1b96440b9a6c885a136d41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound1: {fileID: 2929947246389408171, guid: f0f0d1e43369a794c8e8c41921cf0aac, type: 3}
-  sound2: {fileID: 6492943984186262218, guid: 63efba2ffea499046bff938f44219a78, type: 3}
+  sound1: {fileID: 13092406912868382, guid: c3c0085cda9b2e44492632541c1f07da, type: 3}
+  sound2: {fileID: 1266605935423952393, guid: af1809e232d61db4d81cc219f5c96b21, type: 3}
 --- !u!1 &271919853
 GameObject:
   m_ObjectHideFlags: 0
@@ -2063,6 +2063,7 @@ MonoBehaviour:
   maxSpeed: 10
   slideForce: 0.1
   jumpForce: 500
+  sound: {fileID: 6819887014438549437, guid: fe6c1c0cba2bd5041ab8a91b43ebb52f, type: 3}
 --- !u!50 &271919856
 Rigidbody2D:
   serializedVersion: 4
@@ -2936,6 +2937,7 @@ MonoBehaviour:
   maxSpeed: 10
   slideForce: 0.1
   jumpForce: 500
+  sound: {fileID: 6819887014438549437, guid: fe6c1c0cba2bd5041ab8a91b43ebb52f, type: 3}
 --- !u!50 &792521488
 Rigidbody2D:
   serializedVersion: 4

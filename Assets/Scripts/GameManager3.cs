@@ -1,6 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using Newtonsoft.Json;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager3 : MonoBehaviour
 {
@@ -8,12 +10,59 @@ public class GameManager3 : MonoBehaviour
 
     public GameObject enemy;
     public GameObject enemyClone;
-
+    
+    private int blueDiamondsCollected;
+    private int redDiamondsCollected;
+    [SerializeField]
+    private GameObject blueCollectiblePrefab;
+    [SerializeField]
+    private GameObject redCollectiblePrefab;
     public float timer;
-    // Start is called before the first frame update
-    void Start()
+    
+    private void Awake()
     {
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+    
+    
+    // Start is called before the first frame update
+    private void Start()
+    {
+        // Set to global manager which is the current level
+        string currentLevel = SceneManager.GetActiveScene().name;
+        GlobalGameManager.lastLevel = currentLevel;
+        print(GlobalGameManager.lastLevel);
+        
+        // Display the collectibles from a json file
+        string jsonPathBlue = "Assets/Files/collectibles-lvl3-blue.json";
+        string jsonBlue = File.ReadAllText(jsonPathBlue);
+        
+        string jsonPathRed = "Assets/Files/collectibles-lvl3-red.json";
+        string jsonRed = File.ReadAllText(jsonPathRed);
+        
+        List<Coordinates> coorListBlue = JsonConvert.DeserializeObject<List<Coordinates>>(jsonBlue);
+
+        foreach (Coordinates coords in coorListBlue)
+        {
+            Vector3 position = new Vector3(coords.x, coords.y, 0f);
+            Instantiate(blueCollectiblePrefab, position, Quaternion.identity);
+
+        }
+        
+        List<Coordinates> coorListRed = JsonConvert.DeserializeObject<List<Coordinates>>(jsonRed);
+
+        foreach (Coordinates coords in coorListRed)
+        {
+            Vector3 position = new Vector3(coords.x, coords.y, 0f);
+            Instantiate(redCollectiblePrefab, position, Quaternion.identity);
+        }
     }
 
     // Update is called once per frame
@@ -26,5 +75,27 @@ public class GameManager3 : MonoBehaviour
             Destroy(enemyClone, 5);
             timer = 0;
         }
+        
+        if(Door1Collision.valor==1 &&  Door2Collision.valor==1)
+        {
+            Door1Collision.valor=0;
+            Door2Collision.valor=0;
+            // Set the level info to show later
+            float timeToPassLvl = timer / 60;
+            PlayerPrefs.SetInt("Level-3-blue-diamonds", blueDiamondsCollected);
+            PlayerPrefs.SetInt("Level-3-red-diamonds", redDiamondsCollected);
+            PlayerPrefs.SetFloat("Level-3-time", timeToPassLvl);
+            GlobalGameManager.Instance.showLevelUpMenu();
+        }
+    }
+    
+    public void collectingBlueDiamonds ()
+    {
+        blueDiamondsCollected += 1;
+    }
+
+    public void collectingRedDiamonds()
+    {
+        redDiamondsCollected += 1;
     }
 }

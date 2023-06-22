@@ -25,7 +25,7 @@ public class WGCollectibleInteraction : MonoBehaviour
                 }
                 else
                 {
-                    
+                    GameManager3.instance.collectingBlueDiamonds();   
                 }
             }
         }

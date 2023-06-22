@@ -14268,6 +14268,7 @@ GameObject:
   - component: {fileID: 271919856}
   - component: {fileID: 271919855}
   - component: {fileID: 271919859}
+  - component: {fileID: 271919860}
   m_Layer: 7
   m_Name: Square
   m_TagString: FireBoy
@@ -14283,7 +14284,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 271919853}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.67, y: -16.48, z: 0.038875826}
+  m_LocalPosition: {x: 12.47, y: -16.4, z: 0.038875826}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14395,6 +14396,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1}
   m_Direction: 0
+--- !u!114 &271919860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271919853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93df276066d4d7245bd3899a22ddf77f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &289807187
 GameObject:
   m_ObjectHideFlags: 0
@@ -14566,6 +14579,7 @@ GameObject:
   m_Component:
   - component: {fileID: 410460007}
   - component: {fileID: 410460008}
+  - component: {fileID: 410460009}
   m_Layer: 12
   m_Name: GameObject
   m_TagString: Untagged
@@ -14602,7 +14616,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 6928124039984195320, guid: a2c3479115d124fcfb1662832a2fb7b2, type: 3}
   enemyClone: {fileID: 0}
+  blueCollectiblePrefab: {fileID: 4441922693497885552, guid: 9e66423a13732ac488ed496969308dc5, type: 3}
+  redCollectiblePrefab: {fileID: 248945743866694431, guid: 500a37396fc7ffe49987fe94b6eaa2db, type: 3}
   timer: 0
+--- !u!114 &410460009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410460006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae569205dd8dfcc4b977541d75ff01cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &539335670
 GameObject:
   m_ObjectHideFlags: 0
@@ -15008,6 +15036,7 @@ GameObject:
   - component: {fileID: 792521488}
   - component: {fileID: 792521486}
   - component: {fileID: 792521490}
+  - component: {fileID: 792521491}
   m_Layer: 8
   m_Name: Square
   m_TagString: WaterGirl
@@ -15023,7 +15052,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 792521484}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.7, y: -15, z: -0.02186795}
+  m_LocalPosition: {x: 20.49, y: -14.89, z: -0.02186795}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15135,6 +15164,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1}
   m_Direction: 0
+--- !u!114 &792521491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 792521484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f896a06038e0ff946b0398bd03ac98ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &811148467
 GameObject:
   m_ObjectHideFlags: 0

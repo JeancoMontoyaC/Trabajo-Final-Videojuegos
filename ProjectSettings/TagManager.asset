@@ -12,6 +12,7 @@ TagManager:
   - Toxic
   - ButtonRight
   - ButtonLeft
+  - Slime
   layers:
   - Default
   - TransparentFX

@@ -24,8 +24,8 @@ TagManager:
   - Player2
   - Door1
   - Door2
-  - 
-  - 
+  - BoxToMove
+  - Enemy
   - 
   - 
   - 

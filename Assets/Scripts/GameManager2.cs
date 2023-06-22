@@ -15,6 +15,7 @@ public class GameManager2 : MonoBehaviour
     private GameObject blueCollectiblePrefab;
     [SerializeField]
     private GameObject redCollectiblePrefab;
+    private float timer;
     
     
     private void Awake()
@@ -32,6 +33,12 @@ public class GameManager2 : MonoBehaviour
     
     private void Start()
     {
+        // Set to global manager which is the current level
+        string currentLevel = SceneManager.GetActiveScene().name;
+        GlobalGameManager.lastLevel = currentLevel;
+        print(GlobalGameManager.lastLevel);
+        
+        // Display the collectibles from a json file
         string jsonPathBlue = "Assets/Files/collectibles-lvl2-blue.json";
         string jsonBlue = File.ReadAllText(jsonPathBlue);
         
@@ -58,11 +65,20 @@ public class GameManager2 : MonoBehaviour
     
     void Update()
     {
+        timer += Time.deltaTime;
+        
         if(Door1Collision.valor==1 &&  Door2Collision.valor==1)
         {
             Door1Collision.valor=0;
             Door2Collision.valor=0;
-            SceneManager.LoadScene("Level-3");
+            SceneManager.LoadScene("Level-1");
+            // Set the level info to show later
+            float timeToPassLvl = timer / 60;
+            // SceneManager.LoadScene("Level-2");
+            PlayerPrefs.SetInt("Level-2-blue-diamonds", blueDiamondsCollected);
+            PlayerPrefs.SetInt("Level-2-red-diamonds", redDiamondsCollected);
+            PlayerPrefs.SetFloat("Level-2-time", timeToPassLvl);
+            GlobalGameManager.Instance.showLevelUpMenu();
         }
     }
     

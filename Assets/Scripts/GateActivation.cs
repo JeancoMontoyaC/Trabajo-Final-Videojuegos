@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public class GateActivation : MonoBehaviour
 {
@@ -10,34 +11,68 @@ public class GateActivation : MonoBehaviour
     
     private bool isActive;
 
+    private int howManyPressingButton;
+
     private float moveDuration = 10f;
 
     private float moveDistance = 1f;
 
-    private Vector3 originalPositionOfGate; 
+    private float pressDistance = 0.2f;
+
+    private Vector3 originalPositionOfGate;
+    private Vector3 originalPositionOfButton;
 
     public void Start()
     {
         originalPositionOfGate = gateToActivate.transform.position;
+        originalPositionOfButton = gameObject.transform.position;
     }
 
     public void OnTriggerEnter2D(Collider2D col)
     {
-        if (!isActive && (col.CompareTag("FireBoy") || col.CompareTag("WaterGirl")))
+        if ((col.CompareTag("FireBoy") || col.CompareTag("WaterGirl")))
         {
-            moveUpGate();
-            isActive = true;
-
+            string buttonType = gameObject.tag;
+            
+            if (buttonType.Equals("ButtonRight"))
+            {
+                Gate.buttonRightPressed = true;
+            }
+            else
+            {
+                Gate.buttonLeftPressed = true;
+            }
+            
+            if(!Gate.gateIsActive){moveUpGate();}
+            Gate.gateIsActive = true;
+            pressButtonEffect();
+            howManyPressingButton += 1;
+            
         }
     }
+    
 
     public void OnTriggerExit2D(Collider2D other)
     {
-        if (isActive)
+        string buttonType = gameObject.tag;
+        howManyPressingButton -= 1;
+        if (buttonType.Equals("ButtonRight"))
+        {
+            Gate.buttonRightPressed = false;
+        }
+        else
+        {
+            Gate.buttonLeftPressed = false;
+        }
+        
+        if (howManyPressingButton < 1 && !(Gate.buttonRightPressed) && !(Gate.buttonLeftPressed))
         {
             moveDownGate();
-            isActive = false;
+            Gate.buttonRightPressed = false;
+            Gate.buttonLeftPressed = false;
+            Gate.gateIsActive = false;
         }
+        comeBackButtonEffect();
     }
 
     public void moveUpGate()
@@ -66,4 +101,32 @@ public class GateActivation : MonoBehaviour
             gateToActivate.transform.position = Vector3.Lerp(initialPosition, originalPositionOfGate, t);
         }
     }
+
+    public void pressButtonEffect()
+    {
+        float elapsedTime = 0f;
+        Vector3 initialPosition = gameObject.transform.position;
+        Vector3 targetPosition = initialPosition + Vector3.down * pressDistance;
+
+        while (elapsedTime < moveDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsedTime / moveDuration);
+            gameObject.transform.position = Vector3.Lerp(initialPosition, targetPosition, t);
+        }
+    }
+
+    public void comeBackButtonEffect()
+    {
+        float elapsedTime = 0f;
+        Vector3 initialPosition = gameObject.transform.position;
+        
+        while (elapsedTime < moveDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsedTime / moveDuration);
+            gameObject.transform.position = Vector3.Lerp(initialPosition, originalPositionOfButton, t);
+        }
+    }
+    
 }

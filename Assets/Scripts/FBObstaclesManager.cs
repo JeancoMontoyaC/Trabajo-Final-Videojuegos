@@ -7,19 +7,15 @@ public class FBObstaclesManager : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("Water"))
+        if (col.CompareTag("Water") || col.CompareTag("Toxic"))
         {
-            isDead = true;
+            GlobalGameManager.Instance.showDeathMenu();
+            int totalDeaths = PlayerPrefs.GetInt("Level-deaths", 0) + 1;
+            PlayerPrefs.SetInt("Level-deaths", totalDeaths);
             Destroy(gameObject);
-            resetLevel();
+            isDead = true;
         }
     }
     
-    public void resetLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        
-      
-    }
 
 }

@@ -19,6 +19,11 @@ void Start()
 
 void Update()
 {
+    
+    Debug.DrawRay(transform.position,Vector3.down * 0.55f,Color.red);
+    if (Physics2D.Raycast(transform.position,Vector3.down,0.55f)){
+	floor=true;
+	}
     if (floor && Input.GetKeyDown(KeyCode.W))
     {
         rb.AddForce(new Vector2(0f, jumpForce));
@@ -42,19 +47,4 @@ void FixedUpdate()
     }
 }
 
-void OnCollisionEnter2D(Collision2D collision)
-{
-    if (collision.gameObject.layer == 30)
-    {
-        floor = true;
-    }
-}
-
-void OnCollisionExit2D(Collision2D collision)
-{
-    if (collision.gameObject.layer == 30)
-    {
-        floor = false;
-    }
-}
 }

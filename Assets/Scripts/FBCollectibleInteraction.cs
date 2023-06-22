@@ -25,7 +25,7 @@ public class FBCollectibleInteraction : MonoBehaviour
                 }
                 else
                 {
-                    
+                    GameManager3.instance.collectingRedDiamonds();
                 }
             }
         }

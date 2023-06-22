@@ -2,6 +2,8 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UIElements;
+using Button = UnityEngine.UI.Button;
 
 public class LevelUpMenu : MonoBehaviour
 {
@@ -9,6 +11,9 @@ public class LevelUpMenu : MonoBehaviour
     [SerializeField] private TextMeshProUGUI redDiamonds;
     [SerializeField] private TextMeshProUGUI time;
     [SerializeField] private TextMeshProUGUI deaths;
+    [SerializeField] private Button goNextLvlButton;
+    [SerializeField] private Button resetGame;
+    
 
     private void Start()
     {
@@ -29,6 +34,14 @@ public class LevelUpMenu : MonoBehaviour
         blueDiamonds.text = "Blue Diamonds: " + blueDiamondsNum; 
         redDiamonds.text = "Red Diamonds: " + redDiamondsNum;
         deaths.text = "Ranking: " + ranking;
+        
+        resetGame.gameObject.SetActive(false);
+
+        if (GlobalGameManager.lastLevel.Equals("Level-3"))
+        {
+            goNextLvlButton.interactable = false;
+            resetGame.gameObject.SetActive(true);
+        }
 
     }
 

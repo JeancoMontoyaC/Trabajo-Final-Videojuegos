@@ -24,6 +24,9 @@ void Update()
     if (Physics2D.Raycast(transform.position,Vector3.down,0.55f)){
 	floor=true;
 	}
+    else{
+	floor=false;
+	}
     if (floor && Input.GetKeyDown(KeyCode.UpArrow))
     {
         rb.AddForce(new Vector2(0f, jumpForce));

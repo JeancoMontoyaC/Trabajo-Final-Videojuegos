@@ -72,7 +72,7 @@ public class GameManager3 : MonoBehaviour
         if (timer > 2)
         {
             enemyClone = Instantiate(enemy, new Vector3(Random.Range(-15.0f,15.0f), 8.0f, 0.0f), transform.rotation) as GameObject;
-            Destroy(enemyClone, 5);
+            Destroy(enemyClone, 10);
             timer = 0;
         }
         

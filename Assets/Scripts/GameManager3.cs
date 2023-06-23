@@ -18,7 +18,9 @@ public class GameManager3 : MonoBehaviour
     [SerializeField]
     private GameObject redCollectiblePrefab;
     public float timer;
-    
+    private string levelDifficulty;
+    private int difficultyNum;
+
     private void Awake()
     {
         if (instance == null)
@@ -35,6 +37,22 @@ public class GameManager3 : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        levelDifficulty = PlayerPrefs.GetString("Level-3-difficulty", "easy");
+
+        switch (levelDifficulty)
+        {
+            case "easy":
+                difficultyNum = 4;
+                break;
+            case "medium":
+                difficultyNum = 2;
+                break;
+            case "hard":
+                difficultyNum = 1;
+                break;
+        }
+        
+        print(difficultyNum);
         // Set to global manager which is the current level
         string currentLevel = SceneManager.GetActiveScene().name;
         GlobalGameManager.lastLevel = currentLevel;
@@ -54,7 +72,7 @@ public class GameManager3 : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer > 0.5)
+        if (timer > difficultyNum)
         {
             enemyClone = Instantiate(enemy, new Vector3(Random.Range(-15.0f,15.0f), 8.0f, 0.0f), transform.rotation) as GameObject;
             Destroy(enemyClone, 16);

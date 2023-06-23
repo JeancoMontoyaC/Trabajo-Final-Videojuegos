@@ -12,13 +12,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Level-2.unity
     guid: d12b0b6440e131f48a3737c1b6b8d1a8
   - enabled: 1
-    path: Assets/Scenes/Death-menu.unity
-    guid: a2420c460be01c447b6b15635d923ace
-  - enabled: 1
     path: Assets/Scenes/Level-3.unity
     guid: a6fed87e7db214a4ab55ae994f16d21c
-    guid: f40ecc5237f84bb468ebf614b3cff70a
   - enabled: 1
     path: Assets/Scenes/Level-up-menu.unity
     guid: 1e1451836f88a6a449b8395e9e07bcd7
+  - enabled: 1
+    path: Assets/Scenes/Level-3-Difficulty-menu.unity
+    guid: 7afb43e52cba7f4459dde15648d5d8f6
+  - enabled: 1
+    path: Assets/Scenes/Death-menu.unity
+    guid: f40ecc5237f84bb468ebf614b3cff70a
   m_configObjects: {}

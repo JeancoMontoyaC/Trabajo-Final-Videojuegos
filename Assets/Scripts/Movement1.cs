@@ -32,11 +32,11 @@ void Update()
     {
         rb.AddForce(new Vector2(0f, jumpForce));
         floor = false;
-	Instantiate(sound);
+		Instantiate(sound);
     animator.SetBool("jump",true);
     }
     else{
-	animator.SetBool("jump",false);
+	    animator.SetBool("jump",false);
 	}
 }
 

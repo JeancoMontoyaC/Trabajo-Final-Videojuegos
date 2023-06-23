@@ -52,13 +52,31 @@ public class GlobalGameManager : MonoBehaviour
         string[] parts = lastLevel.Split("-");
         int nexLevelNumb = Int32.Parse(parts[1]) + 1;
         string nextLevel = $"Level-{nexLevelNumb}";
-        SceneManager.LoadScene(nextLevel);
+        if (lastLevel.Equals("Level-2"))
+        {
+            SceneManager.LoadScene("Level-3-Difficulty-menu");
+        }
+        else
+        {
+            SceneManager.LoadScene(nextLevel);    
+        }
+        
         PlayerPrefs.DeleteAll();
+    }
+
+    public void goToThirdLevel()
+    {
+        SceneManager.LoadScene("Level-3");
     }
 
     public void resetGame()
     {
         SceneManager.LoadScene("Level-1");
         PlayerPrefs.DeleteAll();
+    }
+
+    public void choseDifficultyOnLvl3()
+    {
+        
     }
 }

@@ -47,22 +47,7 @@ public class GameManager3 : MonoBehaviour
         string jsonPathRed = "Assets/Files/collectibles-lvl3-red.json";
         string jsonRed = File.ReadAllText(jsonPathRed);
         
-        List<Coordinates> coorListBlue = JsonConvert.DeserializeObject<List<Coordinates>>(jsonBlue);
-
-        foreach (Coordinates coords in coorListBlue)
-        {
-            Vector3 position = new Vector3(coords.x, coords.y, 0f);
-            Instantiate(blueCollectiblePrefab, position, Quaternion.identity);
-
-        }
-        
-        List<Coordinates> coorListRed = JsonConvert.DeserializeObject<List<Coordinates>>(jsonRed);
-
-        foreach (Coordinates coords in coorListRed)
-        {
-            Vector3 position = new Vector3(coords.x, coords.y, 0f);
-            Instantiate(redCollectiblePrefab, position, Quaternion.identity);
-        }
+       
     }
 
     // Update is called once per frame

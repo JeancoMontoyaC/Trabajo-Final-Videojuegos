@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class Door2Collision : MonoBehaviour
 {
+public static int valor;
+void Start(){
+valor=0;}
 
-
-    public static int valor=0;
+	
+	
+    
 
     void Update(){
         

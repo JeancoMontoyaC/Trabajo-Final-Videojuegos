@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Door1Collision : MonoBehaviour
 {
-    public static int valor=0;
-
+    public static int valor;
+	
+	void Start(){
+		valor = 0;
+	}
        void Update(){
         
     }
@@ -18,5 +21,7 @@ public class Door1Collision : MonoBehaviour
         valor=0;
         Debug.Log("Salgo");
     }
+
+	
    
 }

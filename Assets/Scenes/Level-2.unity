@@ -2347,6 +2347,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5148122309689285572, guid: 23e303e0a7e913142b38a519597bddd2, type: 3}
+      propertyPath: jumpForce
+      value: 380
+      objectReference: {fileID: 0}
     - target: {fileID: 5290365285442174478, guid: 23e303e0a7e913142b38a519597bddd2, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -2397,11 +2401,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5290365285725257218, guid: 23e303e0a7e913142b38a519597bddd2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 23.32
+      value: 7.48
       objectReference: {fileID: 0}
     - target: {fileID: 5290365285725257218, guid: 23e303e0a7e913142b38a519597bddd2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.2
+      value: 13.41
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23e303e0a7e913142b38a519597bddd2, type: 3}
@@ -4427,9 +4431,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 1}
-  m_Direction: 0
+  m_Offset: {x: 0.004945277, y: -0.015252146}
+  m_Size: {x: 1.2750713, y: 0.9390138}
+  m_Direction: 1
 --- !u!114 &1305577602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4535,11 +4539,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2555660081210656686, guid: 32d48626fc6b6b946a0ee7b6dbdd6c0c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 24.21
+      value: 5.76
       objectReference: {fileID: 0}
     - target: {fileID: 2555660081210656686, guid: 32d48626fc6b6b946a0ee7b6dbdd6c0c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.17
+      value: 12.91
       objectReference: {fileID: 0}
     - target: {fileID: 2555660081503956224, guid: 32d48626fc6b6b946a0ee7b6dbdd6c0c, type: 3}
       propertyPath: m_Name
@@ -4588,6 +4592,10 @@ PrefabInstance:
     - target: {fileID: 2555660081503956239, guid: 32d48626fc6b6b946a0ee7b6dbdd6c0c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6569176253485432645, guid: 32d48626fc6b6b946a0ee7b6dbdd6c0c, type: 3}
+      propertyPath: jumpForce
+      value: 380
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32d48626fc6b6b946a0ee7b6dbdd6c0c, type: 3}

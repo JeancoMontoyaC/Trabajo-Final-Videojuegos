@@ -17,10 +17,12 @@ Fireboy and WaterGirl: El Templo de Mario es un divertido juego de plataformas y
 
 ## Capturas de Pantalla
 
+## Versión de Unity utilizada
+2021.3.17f1
 
 
 ## Link para jugar
-
+https://jeancomontoyac.itch.io/trabajo-final-videojuegos
 
 ## Anotaciones
 Se recomienda jugar en el navegador Google Chrome.

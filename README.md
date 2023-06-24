@@ -15,12 +15,26 @@ Fireboy and WaterGirl: El Templo de Mario es un divertido juego de plataformas y
 - **Sistema de puntuación:** Intenta completar cada nivel en el menor tiempo posible, recolectando la mayor cantidad de diamantes/corazones y muriendo la menor cantidad de veces. Los ranking son: A1, A2, B1, B2, C1, C2. En donde A1 es pasar un nivel excelente y C2 es que no hiciste es pero nada!
 - **Gráficos y sonidos atractivos:** Disfruta de un ambiente visual y sonoro divertido (ya lo verás) que te sumergirá en la experiencia del juego.
 
-## Capturas de Pantalla
+## Capturas del juego
+### Escenario 1
+![Escenario 1](./captures/capture_lvl1.PNG)
 
+### Escenario 2
+![Escenario 1](./captures/capture_lvl2.PNG)
+
+### Escenario 3
+![Escenario 1](./captures/capture_lvl3.PNG)
 
 
 ## Link para jugar
 
+[FireBoy and WaterGirl](https://jeancomontoyac.itch.io/trabajo-final-videojuegos)
+
+## Video del gameplay
+
+[Video gameplay](https://drive.google.com/file/d/1y6jBsilYQo3IvyIaCYrRg_UGvE84E7EK/view?usp=sharing)
 
 ## Anotaciones
-Se recomienda jugar en el navegador Google Chrome.
+- Se recomienda jugar en el navegador Google Chrome.
+- Versión de Unity: 2021.3.17f1
+

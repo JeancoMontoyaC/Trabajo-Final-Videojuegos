@@ -13,7 +13,7 @@ Fireboy and WaterGirl: El Templo de Mario es un divertido juego de plataformas y
 - **Niveles desafiantes:** Hay 3 niveles cada uno con particularidades.
 - **Modo de un jugador y cooperativo:** Juega solo controlando a ambos personajes o invita a un amigo para disfrutar del modo cooperativo y superar los desafíos juntos.
 - **Sistema de puntuación:** Intenta completar cada nivel en el menor tiempo posible, recolectando la mayor cantidad de diamantes/corazones y muriendo la menor cantidad de veces. Los ranking son: A1, A2, B1, B2, C1, C2. En donde A1 es pasar un nivel excelente y C2 es pasar un nivel malo.
-- **Gráficos y sonidos atractivos:** Disfruta de un ambiente visual y sonoro divertido (ya lo verás) que te sumergirá en la experiencia del juego.
+- **Gráficos y sonidos atractivos:** Disfruta de un ambiente visual y sonoro divertido (ya lo verás) que te sumergirá en la experiencia del juego. Se puede mutear el sonido con la letra "m".
 
 ## Capturas del juego
 ### Escenario 1
@@ -43,4 +43,8 @@ Fireboy and WaterGirl: El Templo de Mario es un divertido juego de plataformas y
 - Se recomienda jugar en el navegador Google Chrome.
 - Versión de Unity: 2021.3.17f1
 
+## Atribuciones
+### Assets usados
+- [didigameboy](https://didigameboy.itch.io/jambo-jungle-free-sprites-asset-pack)
+- [kenney](https://www.kenney.nl/assets/pixel-platformer)
 
